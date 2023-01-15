@@ -1,0 +1,14 @@
+.productPage_container{
+    padding: 0 40px;
+    display: flex;
+}
+@media (max-width:1000px) {
+   .productPage_container{
+       padding: 0 15px;
+   }  
+}
+ @media (max-width:700px) {
+    .productPage_container{
+        padding: 0 0;
+    }  
+ }

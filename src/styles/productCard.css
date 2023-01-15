@@ -1,0 +1,23 @@
+.product-card-container{
+    width: 100%;
+    box-shadow: rgba(20, 20, 20, 0.2) 10px 7px 29px 6px;
+    padding: 8%;
+    box-sizing: border-box;
+}
+.name-price{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+.add-to-cart-button{
+    width: 100%;
+    padding: 3%;
+    background-color: rgb(226, 55, 89);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    box-shadow: rgba(17, 13, 13, 0.2) 2px 7px 29px 16px;
+}
