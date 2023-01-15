@@ -1,20 +1,22 @@
 import React from "react";
 import { useProductContext } from "../context/ProductProvider";
 import { getUniqueValues } from "../utils/constant";
-import "../styles/filter.css"
+import { ImCross } from "react-icons/im";
+import "../styles/filter.css";
 
 const Filter = () => {
   const { isLoading, data, isError } = useProductContext();
   const colors = getUniqueValues(data, "color");
   const types = getUniqueValues(data, "type");
   return (
-    <div style={{ width: "25vw" }} className="filter-container">
+    <div className="filter-container">
+      <h3 style={{float:"right",paddingRight:"50px",display:"none"}}><ImCross /></h3>
       <h2>Filter products</h2>
       <div>
         <h3>Color</h3>
         <ul>
           {colors.map((item, i) => (
-            <li>
+            <li key={i}>
               <input type="checkbox" name="" id="" />
               <label htmlFor="">{item}</label>
             </li>
@@ -38,7 +40,7 @@ const Filter = () => {
         <h3>Type</h3>
         <ul>
           {types.map((item, i) => (
-            <li>
+            <li key={i}>
               <input type="checkbox" name="" id="" />
               <label htmlFor="">{item}</label>
             </li>
@@ -51,8 +53,6 @@ const Filter = () => {
       </div>
       <button className="clear-button">Add Filters</button>
       <button className="clear-button">Clear Filters</button>
-      
-      
     </div>
   );
 };

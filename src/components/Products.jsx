@@ -12,6 +12,7 @@ const Products = () => {
         <ProductCard key={index} {...item}/>
       ))}
       </div>
+      {isError && (<div>Oops! Something went Wrong! try Again Later...</div>)}
     </div>
   )
 }

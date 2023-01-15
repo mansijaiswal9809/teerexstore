@@ -17,6 +17,7 @@
 .search-container>input{
     width: 90%;
     border: none;
+    color: crimson;
     /* padding: 7px; */
     font-size: larger;
     outline: none;
@@ -24,4 +25,13 @@
 }
 .filter-div{
     display:none
+}
+@media (max-width:700px) {
+    .filter-div{
+        display:inline-block;
+        padding:10px;
+    }
+    .search-container{
+        width: 90%;
+    }
 }

@@ -1,9 +1,6 @@
 import React from "react";
-import Filter from "../components/Filter";
-import Products from "../components/Products";
-import Search from "../components/Search";
 import '../styles/product.css'
-
+import {Filter,Products,Search} from "../components"
 const Product = () => {
   return (
     <div className="productPage_container">

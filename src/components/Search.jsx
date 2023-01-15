@@ -11,7 +11,7 @@ const Search = () => {
       </div>
       <div className="search-container">
         <input type="search" name="" id="" placeholder="Search..." />
-        <ImSearch size="25px" />
+        <ImSearch size="25px" color="crimson"/>
       </div>
     </div>
   );

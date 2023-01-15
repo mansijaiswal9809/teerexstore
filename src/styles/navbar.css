@@ -16,3 +16,13 @@
     gap: 10px;
 
 }
+.name-price{
+font-size: large;
+font-weight: 600;
+color: var(--crimson-text);
+}
+@media (max-width:600px) {
+    .navbar-container{
+        padding: 15px 15px;
+    }   
+}
