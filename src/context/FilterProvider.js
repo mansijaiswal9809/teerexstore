@@ -18,19 +18,16 @@ const initialState = {
   colors: ["all"],
   types: ["all"],
   genders: ["all"],
-  minPrice: 0,
-  maxPrice: 0,
-  price: 0,
 };
 export const FilterProvider = ({ children }) => {
-  const { data } = useProductContext();
+  const {products } = useProductContext();
   const [state, dispatch] = useReducer(reducer, initialState);
   const getFilteredData = () => {
-    dispatch({ type: GET_FILTERED_DATA, payload: data });
+    dispatch({ type: GET_FILTERED_DATA, payload: products });
   };
   useEffect(() => {
     getFilteredData();
-  }, [data]);
+  }, [products]);
 
   const updateFilter = (type, value) => {
     if (type === "colors") {
@@ -45,11 +42,11 @@ export const FilterProvider = ({ children }) => {
     }
   };
   const filter = () => {
-    dispatch({ type: FILTER_PRODUCTS, payload: data });
+    dispatch({ type: FILTER_PRODUCTS, payload: products });
   };
   const clearFilter = () => {
     dispatch({ type: CLEAR_FILTER });
-    dispatch({ type: FILTER_PRODUCTS, payload: data })
+    dispatch({ type: FILTER_PRODUCTS, payload: products })
   };
   //   console.log(state.colors);
   //   console.log(state.filteredData);

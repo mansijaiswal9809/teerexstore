@@ -7,12 +7,12 @@ import { useFilterContext } from "../context/FilterProvider";
 
 const Filter = () => {
   const { data,closeSidebar,isSidebarOpen} = useProductContext();
-  const {updateFilter,filter,clearFilter}= useFilterContext()
+  const {updateFilter,filter}= useFilterContext()
   const colors = getUniqueValues(data, "color");
   const types = getUniqueValues(data, "type");
   return (
-    <div className="filter-container" style={{left:`${isSidebarOpen?"0":"-500px"}`}}>
-      <h3 style={{float:"right",paddingRight:"50px"}} onClick={closeSidebar}><ImCross /></h3>
+    <div className="filter-container " style={{left:`${isSidebarOpen?"0":"-500px"}`}}>
+      <h3 style={{float:"right",paddingRight:"50px"}} className="filter-cross" onClick={closeSidebar}><ImCross /></h3>
       <h2>Filter products</h2>
       <div>
         <h3>Color</h3>
@@ -49,12 +49,7 @@ const Filter = () => {
           ))}
         </ul>
       </div>
-      <div>
-        <h3>Price Range</h3>
-        <input type="range" name="" id="" onChange={()=>updateFilter("price")}/>
-      </div>
       <button className="clear-button" onClick={filter}>Add Filters</button>
-      <button className="clear-button"onClick={clearFilter}>Clear Filters</button>
     </div>
   );
 };

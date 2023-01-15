@@ -4,7 +4,7 @@ import ProductCard from './ProductCard'
 import "../styles/products.css"
 import { useFilterContext } from '../context/FilterProvider'
 const Products = () => {
-  const {isLoading,data,isError}= useProductContext()
+  const {isLoading,isError}= useProductContext()
   const {filteredData}= useFilterContext()
   return (
     <div style={{width:"75vw"}}>
