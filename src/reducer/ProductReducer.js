@@ -9,6 +9,12 @@ if(action.type===SET_DATA){
 if(action.type===IS_ERROR){
     return{...state, isError:true}
 }
+if(action.type==="open"){
+    return{...state, isSidebarOpen:true}
+}
+if(action.type==="close"){
+    return{...state, isSidebarOpen:false}
+}
 return state
 }
 

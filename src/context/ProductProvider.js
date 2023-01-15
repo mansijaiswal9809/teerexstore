@@ -11,9 +11,16 @@ const initialState = {
   isLoading: false,
   data: [],
   isError: false,
+  isSidebarOpen:false,
 };
 export const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const openSidebar=()=>{
+    dispatch({type:"open"})
+  }
+  const closeSidebar=()=>{
+    dispatch({type:"close"})
+  }
   const fetchData = async () => {
     try {
       dispatch({ type: IS_LOADING });
@@ -30,6 +37,6 @@ export const ProductProvider = ({ children }) => {
     fetchData();
   }, []);
 //   console.log(state.data)
-  return <ProductContext.Provider value={{...state}}>{children}</ProductContext.Provider>;
+  return <ProductContext.Provider value={{...state,openSidebar,closeSidebar}}>{children}</ProductContext.Provider>;
 };
 export const useProductContext=()=>useContext(ProductContext)
