@@ -6,7 +6,7 @@ const Product = () => {
     <div className="productPage_container">
         <Filter />
       <div>
-      <Search />
+        <Search />
         <Products />
       </div>
     </div>

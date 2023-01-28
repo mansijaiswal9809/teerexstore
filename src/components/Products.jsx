@@ -1,23 +1,29 @@
-import React from 'react'
-import { useProductContext } from '../context/ProductProvider'
-import ProductCard from './ProductCard'
-import "../styles/products.css"
-import { useFilterContext } from '../context/FilterProvider'
+import React from "react";
+import ProductCard from "./ProductCard";
+import "../styles/products.css";
+import { useSelector, useDispatch } from "react-redux";
+import { getFilteredData } from "../features/ProductSlice";
+import { useEffect } from "react";
+
 const Products = () => {
-  const {isLoading,isError}= useProductContext()
-  const {filteredData}= useFilterContext()
+  const dispatch = useDispatch();
+  const { isLoading, isError, filteredData, products } = useSelector(
+    (store) => store.products
+  );
+  useEffect(() => {
+    dispatch(getFilteredData());
+  }, [products]);
   return (
-    <div style={{width:"75vw"}}>
-      {isLoading && (<div>loading...</div>) }
-      <div className='All-products'>
-      {filteredData.map((item,index)=>(
-        <ProductCard key={index} {...item}/>
-      ))}
+    <div style={{ width: "75vw" }}>
+      {isLoading && <div>loading...</div>}
+      <div className="All-products">
+        {filteredData.map((item, index) => (
+          <ProductCard key={index} item={item} />
+        ))}
       </div>
-      {isError && (<div>Oops! Something went Wrong! try Again Later...</div>)}
+      {isError && <div>Oops! Something went Wrong! try Again Later...</div>}
     </div>
-  )
-}
+  );
+};
 
-export default Products
-
+export default Products;

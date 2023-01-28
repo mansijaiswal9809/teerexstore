@@ -21,7 +21,7 @@ if(action.type===GET_ALL_PRODUCTS){
 if(action.type===SEARCH_PRODUCTS){
     const {text,Data}=action.payload
     let newData=Data.filter((item)=>item.name.startsWith(text))
-    console.log(newData)
+    // console.log(newData)
     return {...state,products:[...newData]}
 }
 return state
