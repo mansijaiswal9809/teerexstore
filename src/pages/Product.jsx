@@ -1,9 +1,8 @@
 import React from "react";
-import '../styles/product.css'
 import {Filter,Products,Search} from "../components"
 const Product = () => {
   return (
-    <div className="productPage_container">
+    <div className="flex p-0 mymd:px-4 mylg:px-10 ">
         <Filter />
       <div>
         <Search />

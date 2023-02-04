@@ -1,7 +1,6 @@
 import React from "react";
 import { getUniqueValues } from "../utils/constant";
 import { ImCross } from "react-icons/im";
-import "../styles/filter.css";
 import { useSelector, useDispatch } from "react-redux";
 import { closeSidebar, updateFilter, filter } from "../features/ProductSlice";
 import { getAllProducts } from "../features/ProductSlice";
@@ -17,19 +16,18 @@ const Filter = () => {
   const types = getUniqueValues(data, "type");
   return (
     <div
-      className="filter-container "
+      className=" bg-white  transition-all duration-1000 ease-linear w-1/2 absolute p-[20px] mymd:w-1/4 mymd:static mymd:p-0"
       style={{ left: `${isSidebarOpen ? "0" : "-500px"}` }}
     >
       <h3
-        style={{ float: "right", paddingRight: "50px" }}
-        className="filter-cross"
+        className="p-[40px] pr-[50px] float-right inline-block mymd:hidden "
         onClick={() => dispatch(closeSidebar())}
       >
         <ImCross />
       </h3>
-      <h2>Filter products</h2>
+      <h2 className="text-3xl my-6">Filter Products</h2>
       <div>
-        <h3>Color</h3>
+        <h3 className="my-2 text-xl">Color</h3>
         <ul>
           {colors.map((item, i) => (
             <li key={i}>
@@ -48,7 +46,7 @@ const Filter = () => {
         </ul>
       </div>
       <div>
-        <h3>Gender</h3>
+        <h3 className="my-2 text-xl">Gender</h3>
         <ul>
           <li>
             <input
@@ -77,7 +75,7 @@ const Filter = () => {
         </ul>
       </div>
       <div>
-        <h3>Type</h3>
+        <h3 className="my-2 text-xl"> Type</h3>
         <ul>
           {types.map((item, i) => (
             <li key={i}>
@@ -95,7 +93,7 @@ const Filter = () => {
           ))}
         </ul>
       </div>
-      <button className="clear-button" onClick={() => dispatch(filter())}>
+      <button className="mt-[20px] w-[90%] p-[3%] border-0 rounded-sm text-white font-semibold text-base shadow-md bg-crimson-500 hover:bg-crimson-700 active:bg-crimson-500" onClick={() => dispatch(filter())}>
         Add Filters
       </button>
     </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import "../styles/products.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getFilteredData } from "../features/ProductSlice";
 import { useEffect } from "react";
@@ -14,9 +13,9 @@ const Products = () => {
     dispatch(getFilteredData());
   }, [products]);
   return (
-    <div style={{ width: "75vw" }}>
+    <div className="w-3/4">
       {isLoading && <div>loading...</div>}
-      <div className="All-products">
+      <div className="grid grid-cols-1 mysm:grid-cols-2 mylg:grid-cols-3 mymd:w-[75vw] w-screen gap-3">
         {filteredData.map((item, index) => (
           <ProductCard key={index} item={item} />
         ))}
