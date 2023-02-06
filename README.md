@@ -16,7 +16,7 @@
 * useDispatch()
 ## Pages
 * Home Page
-<img src="https://drive.google.com/file/d/1jS2D-zPQX-YOpQgZHrR2ep7EoIjtZ0Ls/view?usp=share_link" alt="HOME">
+<img src="https://user-images.githubusercontent.com/114077602/216988860-fa22a0d2-78ee-4d6c-8f40-afc7d79aa95e.png" alt="HOME">
 
 * Cart Page
-<img src="https://drive.google.com/file/d/1YFSDg2Xvwdc3Y_3IfGnvh2-mW_4oZMH6/view?usp=share_link" alt="CART"/>
+<img src="https://user-images.githubusercontent.com/114077602/216988984-877db806-d5b3-4ea1-a100-d5d725be6804.png" alt="CART"/>
