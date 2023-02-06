@@ -1,4 +1,4 @@
-# This is an RESPONSIVE E-commerce Application with following functionalities
+# This is a RESPONSIVE E-commerce Application with following functionalities
 * Filter
 * Search
 * Add to cart
@@ -12,7 +12,7 @@
 ## Hooks Used
 * useState()
 * useEffect()
-* useSelector
+* useSelector()
 * useDispatch()
 ## Pages
 * Home Page
